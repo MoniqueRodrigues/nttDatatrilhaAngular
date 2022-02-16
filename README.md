@@ -1,2 +1,2 @@
 # nttDatatrilhaAngular
-#Desafios NttData desenvolvido a apartir do Angular2.
+#Desafios NttData desenvolvidos a partir do Angular2.
