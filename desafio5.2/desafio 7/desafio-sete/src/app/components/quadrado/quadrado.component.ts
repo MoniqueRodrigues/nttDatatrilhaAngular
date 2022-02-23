@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class QuadradoComponent {
   @Input() valor: number = 0; 
 
-  constructor(private router: Router )
+  constructor(private router: Router)
   {
     this.valor = this.router.getCurrentNavigation()?.extras.state?.['valorRota']
     
