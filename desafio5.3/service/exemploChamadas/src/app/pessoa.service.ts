@@ -1,40 +1,74 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
- import {pessoa} from './pessoa/pessoa';
+import { retry, catchError } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import {pessoa} from './pessoa/pessoa';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PessoaService {
-  dados: pessoa[] = [
-    new pessoa(1,"Mo",39),
-    new pessoa(2,"Ivan",36),
-    new pessoa(3,"Jú", 7)
-  ];
+  url = 'http://localhost:3000/pessoa'; //api rest fake
+
+
+  // injetando o HttpClient
+  constructor(private httpClient: HttpClient) { }
+
+ // Headers
+ httpOptions = {
+   headers: new HttpHeaders({'Content-Type': 'application/json'})
+ }
+
+
+// Obtem todas as pessoas
+  getUsers(): Observable<pessoa[]>{
+    return this.httpClient.get<pessoa[]>(this.url)
+      // .pipe(
+      //   retry(2),
+      //   catchError(this.handleError))
+  }
+
+
+  // Obtem uma pessoa pelo id
+  getUsersById(id:number): Observable<pessoa>{
+    return this.httpClient.get<pessoa>(this.url + '/' + id);
+    // .pipe(
+    //   retry(2),
+    //   catchError(this.handleError)
+    // )
+  }
+
+  //salva uma pessoa
+  SaveUsers(pessoa:pessoa):Observable<pessoa>{
+    return this.httpClient.post<pessoa>(this.url,JSON.stringify(pessoa),this.httpOptions)
+    // .pipe(
+    //   retry(2),
+    //   catchError(this.handleError)
+    // )
+
+  }
+
+
+  //atualiza uma pessoa
+  updateUser(pessoa:pessoa):Observable<pessoa>{
+    return this. httpClient.put<pessoa>(this.url + '/' + pessoa.id, JSON.stringify(pessoa),this.httpOptions)
+    // .pipe(
+    //   retry(1),
+    //   catchError(this.handleError)
+    // )
+  }
+
+
+  //deleta uma pessoa
+  deleteUser(pessoa:pessoa){
+    return this.httpClient.delete<pessoa>(this.url + '/' + pessoa.id, this.httpOptions)
+    // .pipe(
+    //   retry(1),
+    //   catchError(this.handleError)
+    // )
+  }
   
-  constructor(http: HttpClient) {}
-
-  getUsers(){
-    return this.dados;
-  }
-
-
-  getUsersById(userId:number){
-    this.dados=  this.dados.filter(dado => dado.id === userId)
-    console.log("dadosCapturados",this.dados)
-    return this.dados;
-
-  }
-
-  deleteUser(userId:number){
-    this.dados=  this.dados.filter(dado => dado.id != userId)
-    console.log("dadosExcluidos",this.dados)
-    return this.dados;
-  }
-
-  setUsers(pessoa:pessoa){
-    this.dados.push(pessoa);
-    console.log("dados",this.dados)
-  }
+   
+  
 }

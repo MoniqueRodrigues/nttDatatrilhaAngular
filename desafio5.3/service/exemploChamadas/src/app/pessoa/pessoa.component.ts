@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PessoaService } from '../pessoa.service'; 
 import {pessoa} from './pessoa';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-pessoa',
@@ -9,20 +10,26 @@ import {pessoa} from './pessoa';
   styleUrls: ['./pessoa.component.scss']
 })
 export class PessoaComponent implements OnInit {
-  pessoas:pessoa[]
 
-  //definindo o metodo set:
-  setUsers(pessoa:pessoa){
-    this.pessoaService.setUsers(pessoa);
-    window.alert('Seu dado foi adicionado com sucesso!')
+  pessoas:pessoa[] = [];
 
+
+
+
+  // defini se a pessoa será criada ou atualizada
+  SaveUsers(pessoa:pessoa){
+      this.pessoaService.SaveUsers(pessoa)
   }
 
-  //definindo o metodo delete:
-  deleteUser(pessoa:pessoa){
-    this.pessoas = this.pessoaService.deleteUser(pessoa.id);
-    window.alert('Seu dado foi deletado com sucesso!')
+  // deleta uma pessoa:
+  deleteUser(pessoa:pessoa {
+    this.pessoaService.deleteUser(pessoa).subscribe(() => {
+      this.getUsers();
+    });
   }
+
+
+
 
 
 
@@ -30,13 +37,11 @@ export class PessoaComponent implements OnInit {
   //injetando o service:
   constructor(
     private route: ActivatedRoute,
-    private pessoaService: PessoaService,
+    private pessoaService: PessoaService
   ) {
-      this.pessoas = pessoaService.getUsers();
-      console.log(this.pessoas)
-
-    pessoaService.getUsersById(2);
-    
+    this.pessoaService = pessoaService;
+    pessoaService.getUsers()
+      .subscribe(pes => this.pessoas = pes); 
 
    }
 
