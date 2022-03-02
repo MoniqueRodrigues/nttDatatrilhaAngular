@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PessoaService } from '../pessoa.service'; 
 import {pessoa} from './pessoa';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-pessoa',
@@ -11,42 +11,40 @@ import { NgForm } from '@angular/forms';
 })
 export class PessoaComponent implements OnInit {
 
-  pessoas:pessoa[] = [];
+  pessoas:pessoa[] = [];  
+  pessu:pessoa = new pessoa(0, "Sogra", 63)
 
+  constructor (private pessoaService: PessoaService){
 
-
-
-  // defini se a pessoa será criada ou atualizada
-  SaveUsers(pessoa:pessoa){
-      this.pessoaService.SaveUsers(pessoa)
   }
 
-  // deleta uma pessoa:
-  deleteUser(pessoa:pessoa {
-    this.pessoaService.deleteUser(pessoa).subscribe(() => {
-      this.getUsers();
-    });
+  //inicia o carregamento
+  ngOnInit(){
+    this.pessoaService.getUsers().subscribe(arrayPessoa => this.pessoas = arrayPessoa);
+    this.pessoaService.saveUsers(this.pessu).subscribe()
+   
+
   }
 
-
-
-
-
-
-
-  //injetando o service:
-  constructor(
-    private route: ActivatedRoute,
-    private pessoaService: PessoaService
-  ) {
-    this.pessoaService = pessoaService;
-    pessoaService.getUsers()
-      .subscribe(pes => this.pessoas = pes); 
-
+   // defini se a pessoa será criada ou atualizada
+   saveUsers(pessoa:pessoa){
+    this.pessoaService.saveUsers(pessoa).subscribe()
    }
 
-  ngOnInit(): void {
- 
-  }
 
+    // Chama o serviço para obtém todas as pessoas
+    getUsers(){
+      this.pessoaService.getUsers().subscribe((pessoas:pessoa[])=>{
+        this.pessoas = pessoas;
+      })
+    }
+
+    // deleta uma pessoa
+    deleteUser(pessoas:pessoa){
+      this.pessoaService.deleteUser(pessoas).subscribe(()=>{
+        this.getUsers();
+      })
+
+    }
+  
 }

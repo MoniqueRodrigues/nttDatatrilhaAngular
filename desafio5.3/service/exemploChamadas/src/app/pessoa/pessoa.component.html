@@ -1,17 +1,9 @@
 <h2>Dados pessoais</h2>
 
-<!-- <div *ngIf="pessoaModel">
-  <h3>{{ pessoaModel.id }}</h3>
-  <h4>{{ pessoaModel.nome }}</h4>
-  <p>{{ pessoaModel.idade }}</p>
-  <button type="button" (click)="setUsers(pessoaModel)">Enviar</button>
-  <button type="button" (click)="deleteUser(pessoaModel)">Excluir</button>
-</div> -->
-
 <div *ngFor="let pessoa of pessoas">
   <h3>{{ pessoa.id}}</h3>
   <h4>{{ pessoa.nome }}</h4>
   <p>{{ pessoa.idade }}</p>
-  <button type="button" (click)="SaveUsers(pessoa)">Enviar</button>
-  <!-- <button type="button" (click)="DeleteUser(pessoa)">Excluir</button> -->
+  <button type="button" (click)="saveUsers(pessoa)">Enviar</button>
+  <button type="button" (click)="deleteUser(pessoa)">Excluir</button>
 </div>

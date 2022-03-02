@@ -40,7 +40,7 @@ export class PessoaService {
   }
 
   //salva uma pessoa
-  SaveUsers(pessoa:pessoa):Observable<pessoa>{
+  saveUsers(pessoa:pessoa):Observable<pessoa>{
     return this.httpClient.post<pessoa>(this.url,JSON.stringify(pessoa),this.httpOptions)
     // .pipe(
     //   retry(2),

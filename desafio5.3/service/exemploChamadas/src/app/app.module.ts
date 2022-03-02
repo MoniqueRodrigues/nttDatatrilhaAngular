@@ -16,6 +16,7 @@ import { PessoaComponent } from './pessoa/pessoa.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
