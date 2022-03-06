@@ -1,0 +1,19 @@
+
+<div class="principal-contact  container-form">
+
+    <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()" >
+        <label for="name"> </label>
+        <input id="name" type="text" formControlName="name" required>
+     <!-- <span *ngIf="contactForm.get('name').touched && contactForm.get('name').errors?.required ">Oi</span> --> 
+                 
+        <label for="email"></label>
+        <input id="email" type="email" formControlName="email" required>
+                
+        <label for="message"></label>
+        <input id="message" type="text" formControlName="message" required>
+        
+        <button type="submit" [disabled]= "!contactForm.valid">Send</button>
+        
+    </form>
+</div>
+
