@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { Contact } from '../../models/contact';
 import { ContactService} from '../../services/contact.service'
 
+
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -48,4 +50,13 @@ onSubmit(){
 
   ngOnInit(): void {
   }
+
+  get name(){return this.contactForm.get("name") 
+  }
+  get email(){return this.contactForm.get("email") 
+  }
+  get message(){return this.contactForm.get("message") 
+  }
+  
+
 }

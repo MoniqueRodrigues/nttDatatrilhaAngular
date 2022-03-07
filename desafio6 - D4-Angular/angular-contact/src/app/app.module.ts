@@ -10,6 +10,7 @@ import { ImagemPrincipalComponent } from './componente/imagem-principal/imagem-p
 import { MainComponent } from './componente/main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import{ FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import{ FormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
        
   ],
   providers: [],

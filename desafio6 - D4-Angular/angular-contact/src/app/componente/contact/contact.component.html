@@ -1,22 +1,28 @@
 
 <div class="principal-contact  container-form">
 
-    <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()" >
-        <label for="name"> </label>
-        <input id="name" type="text" formControlName="name" required>
-     <!-- <span *ngIf="contactForm.get('name').touched && contactForm.get('name').errors?.required ">Oi</span> --> 
-                 
-        <label for="email"></label>
-        <input id="email" type="email" formControlName="email" required>
-                
-        <label for="message"></label>
-        <input id="message" type="text" formControlName="message" required>
-        
+    <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()" >     
+                        
+            <label for="name"> </label>
+            <input id="name" type="text" formControlName="name" required>    
+            <div *ngIf="name?.invalid && (name?.dirty && name?.touched)">
+                <span *ngIf="name?.errors?.['required']">Informe o seu nome</span>
+            </div>
+                                                    
+            <label for="email"></label>
+            <input id="email" type="email" formControlName="email" required>
+            <div *ngIf="email?.invalid && (email?.dirty && email?.touched)">
+                <span *ngIf="email?.errors?.['required'] ">Informe o seu e-mail</span>
+            </div>
+                    
+            <label for="message"></label>           
+            <input id="message" type="text" formControlName="message" required>
+            <div *ngIf="message?.invalid && (message?.dirty && message?.touched)">
+                <div *ngIf="message?.errors?.['required']">Insira a sua mensagem</div>
+            </div>           
+       
         <button type="click" [disabled]= "!contactForm.valid">Send</button>
-        <!-- <button type="click">Send</button> -->
-     
-        
-        
+                    
     </form>
 </div>
 
