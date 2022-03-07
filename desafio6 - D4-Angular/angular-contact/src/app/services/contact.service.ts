@@ -21,7 +21,7 @@ export class ContactService {
 
 
   //salvar dados:
-  onSubmit(contact:Contact):Observable<Contact> {
+  sendContact(contact:Contact):Observable<Contact> {
   return this.httpClient.post<Contact>(this.url,contact,this.httpOptions)
   }
 }
