@@ -1,3 +1,13 @@
 .principal{  
     height:300px;
 }
+
+
+//media querie
+@media screen and (max-width:375px){
+    .img-principal{
+        display:none;
+    }
+
+}
+

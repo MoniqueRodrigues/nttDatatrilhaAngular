@@ -4,7 +4,7 @@
 }
 
 .container-contato{
-    margin-left: 500px;
+    left: 500px;
     bottom:105px;
     position: relative;
 }
@@ -15,5 +15,21 @@
     bottom:40px;
 
 }
+p{
+    color:grey;   
+}
 
+//media querie
+@media screen and (max-width:375px){
 
+    .titulo-contato{       
+        font-size:30px;
+        text-align: center;
+    }
+
+    .container-contato{
+        left:20px;       
+        bottom:10px;                       
+    } 
+    
+}

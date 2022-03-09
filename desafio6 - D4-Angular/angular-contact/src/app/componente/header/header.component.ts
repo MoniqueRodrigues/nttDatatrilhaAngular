@@ -9,13 +9,18 @@ export class HeaderComponent implements OnInit {
   
   @HostListener('window:resize',['$event'])
   onResize(event:any){
-    console.log(event.target.innerWidth)
+    this.largura = window.screen.width
+    this.responsive = this.largura < 377 ;
+    console.log(window.screen.width)
   }
-  
+  responsive:boolean= false;
+  largura = window.screen.width
+    
 
   constructor() { }
 
   ngOnInit(): void {
+    this.responsive = this.largura < 377;
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import{ FormControl, FormGroup } from  '@angular/forms';
 import { Validators } from '@angular/forms';
-import {FormGroup} from '@angular/forms';
+// import {FormGroup} from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Contact } from '../../models/contact';
@@ -18,10 +18,8 @@ import { ContactService} from '../../services/contact.service'
 export class ContactComponent implements OnInit {
 
 onSubmit(){
-  if(this.contactForm.valid){
-    console.log("formulário valid");
-    this.contactService.sendContact(this.contactForm.value).subscribe();
-     
+  if(this.contactForm.valid){  
+    this.contactService.sendContact(this.contactForm.value).subscribe();     
   }
   else{
     console.log("formulário inválid", this.contactForm.value);
