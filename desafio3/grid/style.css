@@ -1,0 +1,40 @@
+.container-columns{
+	display:grid;
+    grid-template-columns:120px;
+    /* background-color: aqua; */
+    
+}
+.item{
+    border:solid 1px black;
+}
+
+.container-rows{
+	display:grid;
+    grid-template-rows:25px;
+}
+
+/**/
+.header{
+    grid-area:header;
+    background-color: green;
+}
+.nav{
+    grid-area:nav;
+    background-color: blue;
+}
+.main{
+    grid-area:main;
+    background-color: pink;
+}
+.footer{
+    grid-area:footer;
+    background-color:red;
+}
+
+.container-areas{
+   display: grid;
+   grid-template-areas:"nav nav" "header header" "main main" "footer footer";
+   grid-template-rows: 30px 40px 20px 30px;
+
+}
+/**/
