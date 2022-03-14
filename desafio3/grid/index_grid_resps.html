@@ -44,19 +44,230 @@
             <div class="main">Main</div>
             <div class="footer">Footer</div>
         </div>
+        <br>   
+
+
+        
+        <p>*grid-column-gap- Defini espaço entre as colunas*</p> 
+        <div class="container-column-gap">
+            <div class="item3">7</div>
+            <div class="item3">8</div>
+            
+        </div>
+        <br>   
+        
+
+        <p>*grid-row-gap- Defini espaço entre as linhas*</p> 
+        <div class="container-row-gap">
+            <div class="item3">9</div>
+            <div class="item3">10</div>       
+            <div class="item3">11</div>      
+            <div class="item3">12</div> 
+            <div class="item3">13</div> 
+            <div class="item3">14</div>  
+        </div>
+
+
+        <p>*grid-gap- Atalho que declara as duas propridades num lugar só. Passando um único valor, os dois serão
+         aplicados nas linhas e colunas. Passando dois valores, o primeiro será aplicado nas linhas e o segundo nas colunas*</p> 
+
+         <div class="container-grid-gap">
+            <div class="item3">15</div>
+            <div class="item3">16</div>       
+            <div class="item3">17</div>      
+            <div class="item3">18</div> 
+            <div class="item3">19</div> 
+            <div class="item3">20</div>                
+        </div>
+
+        Obs: O prefixo grip está sendo removido e em navegadores modernos já podem ser utilizados as propriedades
+        column-gap, row-gap e gap.
         <br>
+
+    <p>*justify-items- Alinha todos os itens da grid de forma horizontal dentro de sua própria célula(área)*</p> 
+        . strech(padrão):estica os itens na direção horizontal para que eles preencham a célula;
+        . start:alinha os itens no inicio da célula;
+        . end: alinha os itens no final da célula;
+        . center: alinha os itens no centro da célula;
+        Ex: justify-items:center
+        <div class="container-justify-itens">
+            <div class="item3">21</div>
+            <div class="item3">22</div>       
+            <div class="item3">23</div>      
+            <div class="item3">24</div> 
+            <div class="item3">25</div> 
+            <div class="item3">26</div>                
+        </div>
+
+        <br>
+        <p>*align-items- Alinha todos os itens da grid de forma vertical dentro de sua própria célula(área)*</p> 
+        . strech(padrão):estica os itens na direção vertical para que eles preencham a célula;
+        . start:alinha os itens no inicio da célula;
+        . end: alinha os itens no final da célula;
+        . center: alinha os itens no centro da célula;
+        Ex:align-items:strech;
+        <div class="container-align-items">
+            <div class="item3">27</div>
+            <div class="item3">28</div>       
+            <div class="item3">29</div>      
+            <div class="item3">30</div> 
+            <div class="item3">31</div> 
+            <div class="item3">32</div>                
+        </div>
+        <br>
+
+       <p>**place-itens- Atalho para align-items e justify-items numa única declaração</p>
+        <br>
+
+        <p>*justify-content*- O justify-item alinha cada item dentro de sua própria área e p justify-content 
+            alinha horizontalmente as áreas em relação ao container.
+        </p>
+        .strech: redimensiona os itens para preencherem a largura do container. Somente funciona se a largura
+        da coluna não tiver sido declarada;
+        . start: alinha áreas no inicio da grid;
+        . end: alinhas áreas no final da grid;
+        . center: alinha áreas no centro da grid;
+        .space-around: distribui as áreas com o espaço a sua volta;
+        .space-between: distribui as áreas com o espaço entre elas;
+        .space-evenly: distribui o espaço igualmente entre as áreas;
+
+        Ex:justify-content:space-between;
+        <div class="container-justify-content">
+            <div class="item3">33</div>
+            <div class="item3">34</div>       
+            <div class="item3">35</div>      
+            <div class="item3">36</div> 
+            <div class="item3">37</div> 
+            <div class="item3">38</div>                
+        </div>
+        <br>
+
+        <p>*align-content*- O align-item alinha cada item dentro de sua própria área e o align-content alinha verticalmente 
+            as áreas em relação ao container.
+        </p>
+        .strech: redimensiona os itens para preencherem a altura do container. Somente funciona se a altura
+        da coluna não tiver sido declarada;
+        .start: alinha áreas no inicio da grid;
+        .end: alinhas áreas no final da grid;
+        .center: alinha áreas no centro da grid;
+        .space-around: distribui as áreas com o espaço a sua volta;
+        .space-between: distribui as áreas com o espaço entre elas;
+        .space-evenly: distribui o espaço igualmente entre as áreas;
+
+        Ex:align-content:space-around;
+        !!!VERIFICAR!!!!!
+        <div class="container-align-content">
+          
+            <div class="item3">39</div>
+            <div class="item3">40</div>       
+            <div class="item3">41</div>      
+            <div class="item3">42</div> 
+            <div class="item3">43</div> 
+            <div class="item3">44</div>                
+        </div>
+        <br>
+        <p>*place-content*-Atalho para align-content e justify-content em uma única declaração.</p>
+        <br>
+
+        <p>*grid-auto-columns e grid-auto-rows*- Definem tamanho de linhas e colunas que ainda não foram criadas </p>
+        
+        Ex:grid-auto-rows
+        <div class="container-auto-rows">          
+            <div class="item3">45</div>
+            <div class="item3">46</div>  
+            <div class="item3">47</div>                                              
+        </div>
+        <br>
+
+        Ex:grid-auto-columns
+        <div class="container-auto-columns">          
+            <div class="item3">48</div>
+            <div class="item3">49</div>  
+            <div class="item3">50</div>                                              
+        </div>
+        <br>
+        <p>*grid-auto-flow*- Utilizado quando os itens não possuem uma área declarada 
+            para ficar, podendo assim ir para linha ou coluna </p>        
+            
+            Ex: grid-auto-flow:row
+            <div class="container-grid-auto-flow-row">          
+                <div class="item3">49</div>
+                <div class="item3">50</div>  
+                <div class="item3">51</div>      
+                <div class="item3">52</div>                                         
+            </div>
+            <br>
+            Ex: grid-auto-flow:columns
+            <div class="container-grid-auto-flow-column">          
+                <div class="item3">53</div>
+                <div class="item3">54</div>  
+                <div class="item3">55</div>      
+                <div class="item3">56</div>                                         
+            </div>
+            <br>           
+
+
+    <h3>c) Cite e dê exemplos das propriedades do Grid Item?</h3>
+    <p>No Grid item as propriedades são definidas nos elementos filhos.</p>
+    <p>*grid-area*- Indica a área aonde um item irá se posicionar</p>
+    <div class="container-grid-area" >
+        <div class="item5" >1</div>
+        <div class="item5 selected" >2</div>
+        <div class="item5" >3</div>
+        <div class="item5" >4</div>
+        <div class="item5" >5</div>
+        <div class="item5" >6</div>
+    </div>
+    <br>
+   <p>*grid-column-start, grid-column-end, grid-row-start e grid-row-end*- Propriedades que indicam em que linha
+       e coluna um item deve iniciar e acabar. Pode-se usar números ou nomes.
+   </p>
+   <div class="container" >
+        <div class="item5" >1</div>
+        <div class="item5 selected2" >2</div>
+        <div class="item5" >3</div>
+        <div class="item5" >4</div>
+        <div class="item5" >5</div>
+        <div class="item5" >6</div>
+  </div>
+  <br>
+  <p>* grid-column e grid-row * - No grid-column é indicado o início / fim da coluna, e em grid-row é 
+      indicado o início e fim da linha. Os valores são separados por /.</p>
+      <div class="container" >
+        <div class="item5" >1</div>
+        <div class="item5 selected2" >2</div>
+        <div class="item5" >3</div>
+        <div class="item5" >4</div>
+        <div class="item5" >5</div>
+        <div class="item5" >6</div>
+  </div>
+  <br>
+  <p>*grid-area:Propriedade para indicar as 4 posições em uma única propriedade. A ordem é inicio-linha / inicio-coluna / fim-linha / fim-coluna*</p>
+
+  <div class="container" >
+    <div class="item5" >1</div>
+    <div class="item5 selected2" >2</div>
+    <div class="item5" >3</div>
+    <div class="item5" >4</div>
+    <div class="item5" >5</div>
+    <div class="item5" >6</div>
+</div>
+<br>
+
+
 
 
 
     
+    
 
-<!-- 
 
-    c) Cite e dê exemplos das propriedades do Grid Item?
-    d) O que é a unidade fr?
+
+
+    <!-- d) O que é a unidade fr?
     e) O que é a notação repeat?
-    f) O que são as linhas do Grid?
-     -->
+    f) O que são as linhas do Grid? -->
+  
     
     
 </body>
