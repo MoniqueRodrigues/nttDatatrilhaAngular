@@ -206,6 +206,7 @@
             </div>
             <br>           
 
+            <!--GRID ITEMS -->
 
     <h3>c) Cite e dê exemplos das propriedades do Grid Item?</h3>
     <p>No Grid item as propriedades são definidas nos elementos filhos.</p>
@@ -222,51 +223,108 @@
    <p>*grid-column-start, grid-column-end, grid-row-start e grid-row-end*- Propriedades que indicam em que linha
        e coluna um item deve iniciar e acabar. Pode-se usar números ou nomes.
    </p>
-   <div class="container" >
-        <div class="item5" >1</div>
-        <div class="item5 selected2" >2</div>
-        <div class="item5" >3</div>
-        <div class="item5" >4</div>
-        <div class="item5" >5</div>
-        <div class="item5" >6</div>
+   <div class="container-grid-column-all" >
+        <div class="item6" >7</div>
+        <div class="item6 selected6" >8</div>
+        <div class="item6" >9</div>
+        <div class="item6" >10</div>
+        <div class="item6" >11</div>
+        <div class="item6" >12</div>
   </div>
   <br>
   <p>* grid-column e grid-row * - No grid-column é indicado o início / fim da coluna, e em grid-row é 
       indicado o início e fim da linha. Os valores são separados por /.</p>
-      <div class="container" >
-        <div class="item5" >1</div>
-        <div class="item5 selected2" >2</div>
-        <div class="item5" >3</div>
-        <div class="item5" >4</div>
-        <div class="item5" >5</div>
-        <div class="item5" >6</div>
+      <div class="container-grid-column-grid-row" >
+        <div class="item7" >13</div>
+        <div class="item7 selected7">14</div>
+        <div class="item7" >15</div>
+        <div class="item7" >16</div>
+        <div class="item7" >17</div>
+        <div class="item7" >18</div>
   </div>
   <br>
-  <p>*grid-area:Propriedade para indicar as 4 posições em uma única propriedade. A ordem é inicio-linha / inicio-coluna / fim-linha / fim-coluna*</p>
+  <p>*grid-area:- Propriedade para indicar as 4 posições em uma única propriedade. A ordem é inicio-linha / inicio-coluna / fim-linha / fim-coluna*</p>
 
-  <div class="container" >
-    <div class="item5" >1</div>
-    <div class="item5 selected2" >2</div>
-    <div class="item5" >3</div>
-    <div class="item5" >4</div>
-    <div class="item5" >5</div>
-    <div class="item5" >6</div>
+  <div class="container-grid-area">
+    <div class="item16" >19</div>
+    <div class="item16 selected16" >20</div>
+    <div class="item16" >21</div>
+    <div class="item16" >22</div>
+    <div class="item16" >23</div>
+    <div class="item16" >24</div>
 </div>
+<br>
+<p>*justify-self* - Alinha o item na horizontal dentro da sua própria área.</p>
+    .stretch (padrão): estica o item na horizontal para ele preencher sua célula;
+    .start: alinha o item no início de sua célula;
+    .end: alinha o item no fim de suas células;
+    .center: alinha o item no centro de suas células;
+    Ex: justify-self:end
+    <div class="container-justify-self" >
+        <div class="item22" >22</div>
+        <div class="item22 selected22" >23</div>
+        <div class="item22" >24</div>
+        <div class="item22" >25</div>
+        <div class="item22" >26</div>
+        <div class="item22" >27</div>
+    </div>
+    <br>
+
+<p>*align-self*-Alinha o item na vertical dentro da própria área.</p>
+    .stretch (padrão): estica o item na vertical para ele preencher sua célula;
+    .start: alinha o item na parte de cima da célula;
+    .end: alinha o item na parte de baixo da célula;
+    .center: alinha o item no centro da célula;
+    Ex:align-self:start;
+    <div class="container-align-self" >
+        <div class="item8" >28</div>
+        <div class="item8 selected8" >23</div>
+        <div class="item8" >29</div>
+        <div class="item8" >30</div>
+        <div class="item8" >31</div>
+        <div class="item8" >32</div>
+    </div>
+    <br>
+<p>**place-self*-Atalho para align-self e justify-self em uma única declaração. </p>
+<br> 
+
+<h3>d) O que é a unidade fr?</h3>
+<p>Unidade fr é uma unidade de medida que representa uma fração do espaço disponível no container
+do grid.</p>
+<br>
+
+<h3>e) O que é a notação repeat?</h3>
+<p>É uma maneira reduzida de utilizar quando a definição possue partes repetidas com o objetivo de deixar o código mais simples.</p>
+    ex: sem repeat():grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
+        com repeat():grid-template-columns: repeat(3, 20px [col-start]);
+<br>
+
+<h3>f) O que são as linhas do Grid?</h3>
+<p>Ao ser definido um grid são definidos trilhas do grid e não linhas. O grid devolve linhas numeradas que servem para usarmos para posicionar
+    os itens.
+    Em uma grid de 3 colunas por duas linhas se tem 4 linhas de colunas no total se iniciando da primeira linha da esquerda.
+</p>
+<br>
+
+<h3>g) O que é uma célula no Grid?</h3>
+<p> Célula de grid é a união entre linhas e colunas. É a menor unidade de um grid como uma célula de uma tabela.
+    Tendo o grid definido como pai, os itens filhos são organizados cada um em uma célula do grid definido.
+</p>
+<br>
+
+<h3>h) O que são áreas do Grid?</h3>
+<p>Áreas do grid é uma ou a junção de mais células em forma de retângulo.</p>
+<br>
+
+<h3>i) Crie  um  arquivo  index_grid_exer.html  e  desenvolva  uma  tela  com  aparência  da  figura 4.
+    Dica: use o HTML Semântico para facilitar a construção.
+</h3>
 <br>
 
 
 
 
-
-    
-    
-
-
-
-
-    <!-- d) O que é a unidade fr?
-    e) O que é a notação repeat?
-    f) O que são as linhas do Grid? -->
+  
   
     
     
