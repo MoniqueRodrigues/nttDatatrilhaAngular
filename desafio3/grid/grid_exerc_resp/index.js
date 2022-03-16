@@ -13,7 +13,7 @@ $(document).ready(function(){
             console.log("é menor ou igual a 375")                    
           
         }else{
-            $(".menu").show();
+            // $(".menu").show();
             console.log("não é 375")
             // mantém um elemento ou outro
           
