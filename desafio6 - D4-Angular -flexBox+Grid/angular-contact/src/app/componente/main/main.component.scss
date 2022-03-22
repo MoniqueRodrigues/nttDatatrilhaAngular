@@ -1,0 +1,37 @@
+main{
+    display: flex;
+    justify-content:space-between;
+}
+.conteudo-principal{    
+    margin-right:2%;
+}
+.titulo-contato{
+    color: purple;
+    font-size:3em;
+    text-align: end;
+    font-weight: lighter;
+}
+
+.container-conteudo{
+    position: relative;
+    bottom:40px;  
+}
+
+p{
+    color:grey;   
+}
+
+// //media querie
+// @media screen and (max-width:375px){
+
+//     .titulo-contato{       
+//         font-size:30px;
+//         text-align: center;
+//     }
+
+//     .container-contato{
+//         left:20px;       
+//         bottom:10px;                       
+//     } 
+    
+// }

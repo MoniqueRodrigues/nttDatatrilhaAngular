@@ -1,0 +1,73 @@
+
+header{
+    display:flex;
+    justify-content: space-between;   
+    
+}
+.logotipo{
+    margin-left:2%;
+}
+
+.logo{
+    color: #96187c;
+    font-size: 1.5em;
+   
+}
+
+.navigator{
+    margin-right:2%;   
+}
+
+ul{
+   display: flex;   
+}
+
+li{
+    list-style: none;   
+    padding:15px;   
+    color:grey;          
+}
+
+.login{
+    border: 1px solid #96187c;
+    border-radius:30px;
+    color: #96187c;
+   
+}
+
+
+// //media querie
+// @media screen and (max-width:375px){
+//     .logo{
+//         font-weight:10px;
+//         font-size: 1.5em;       
+//         margin-bottom: 50px;
+//     } 
+
+//     ul{
+//         // left:50px;
+//         position: relative;
+//         bottom:45px;       
+//         float:right;       
+//      }
+//     li{
+//         display:block;    
+     
+              
+//     }
+
+//     .imagem-menu{          
+//         display:block;
+      
+//     }
+   
+// }
+
+
+
+
+
+
+
+
+

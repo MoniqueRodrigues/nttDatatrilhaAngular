@@ -1,0 +1,29 @@
+
+    <div class="principal-contact  container-form">
+
+        <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()" >     
+                            
+                <label for="name"> </label>
+                <input id="name" type="text" placeholder="Your Name" formControlName="name" required>    
+                <div *ngIf="name?.invalid && (name?.dirty && name?.touched)">
+                    <span *ngIf="name?.errors?.['required']">Informe o seu nome</span>
+                </div>
+                                                        
+                <label for="email"></label>
+                <input id="email" type="email" placeholder="Your Subject" formControlName="email" required>
+                <div *ngIf="email?.invalid && (email?.dirty && email?.touched)">
+                    <span *ngIf="email?.errors?.['required'] ">Informe o seu e-mail</span>
+                </div>
+                        
+                <label for="message"></label>           
+                <input id="message" type="text" formControlName="message" placeholder="Your Message" required>
+                <div *ngIf="message?.invalid && (message?.dirty && message?.touched)">
+                    <div *ngIf="message?.errors?.['required']">Insira a sua mensagem</div>
+                </div>           
+        
+            <button type="click" [disabled]= "!contactForm.valid">START CHAT</button>
+                        
+        </form>
+    </div>
+
+
